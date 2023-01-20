@@ -1,0 +1,1 @@
+grpcwebproxy-v0.15.0-win64.exe --run_tls_server=false --allow_all_origins --backend_addr=localhost:9090 --backend_tls_noverify
