@@ -1,0 +1,29 @@
+{
+  "name": "grpc-web-echo-test",
+  "dependencies": {
+    "google-protobuf": "^3.21.2",
+    "grpc-web": "^1.4.2",
+    "postinstall": "^0.8.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "concurrently": "^7.6.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "version": "1.0.0",
+  "main": "client.js",
+  "scripts": {
+    "postinstall": "cd node-server && npm i",
+    "start": "concurrently --kill-others \"npm run server\" \"npm run proxy\"",
+    "compile_proto": "protoc -I=. echo.proto --js_out=import_style=commonjs:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.",
+    "build_client": "npx webpack",
+    "make": "npm run compile_proto && npmn run build_client",
+    "server": "node node-server/server.js",
+    "proxy": "call \"grpcweb-proxy/grpcwebproxy-v0.15.0-win64.exe\" --run_tls_server=false --allow_all_origins --backend_addr=localhost:9090 --backend_tls_noverify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Winger",
+  "license": "MIT",
+  "description": ""
+}

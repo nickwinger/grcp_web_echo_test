@@ -1,0 +1,8 @@
+/node_modules
+/.vscode
+/dist
+# System files
+.DS_Store
+Thumbs.db
+echo_grpc_web_pb.js
+echo_pb.js
