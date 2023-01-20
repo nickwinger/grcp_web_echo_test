@@ -16,14 +16,14 @@
   "scripts": {
     "postinstall": "cd node-server && npm i",
     "start": "concurrently --kill-others \"npm run server\" \"npm run proxy\"",
-    "compile_proto": "protoc -I=. echo.proto --js_out=import_style=commonjs:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.",
+    "compile_proto": "call \"protoc-3.20.1-win64/bin/protoc.exe\" -I=. echo.proto --js_out=import_style=commonjs:. --plugin=protoc-gen-grpc-web=protoc-gen-grpc-web-1.4.2-windows-x86_64.exe --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.",
     "build_client": "npx webpack",
-    "make": "npm run compile_proto && npmn run build_client",
+    "make": "npm run compile_proto && npm run build_client",
     "server": "node node-server/server.js",
     "proxy": "call \"grpcweb-proxy/grpcwebproxy-v0.15.0-win64.exe\" --run_tls_server=false --allow_all_origins --backend_addr=localhost:9090 --backend_tls_noverify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nick Winger",
   "license": "MIT",
-  "description": ""
+  "description": "Full self contained working example of the grcpweb-echo example from grpc.io"
 }

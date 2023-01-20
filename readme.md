@@ -3,6 +3,8 @@
 This is a full self contained working example of the grcpweb-echo example from grpc.io
 It is not dependend on a big proxy which needs docker, but only uses the simple executable which is part of this repo
 
+It even includes the correct/older version of protoc to compile javascript AND the grcp-web plugin, so no anger and worries...
+
 ## Build
 `npm install`
 
@@ -11,7 +13,7 @@ It is not dependend on a big proxy which needs docker, but only uses the simple 
 `npm run make`
 
 it will compile the proto file and compile the javascript files to be able to run in the browser
-If already compiled the proto you can also just use *build_client.cmd* or *npm run build_client* for webpacking the javascript for the browser.
+If already compiled the proto you can also just use *npm run build_client* for webpacking the javascript for the browser.
 
 ## Run
 
