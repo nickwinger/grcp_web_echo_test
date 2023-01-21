@@ -18,5 +18,5 @@ If already compiled the proto you can also just use *npm run build_client* for w
 ## Run
 
 1. `npm start` this starts the grpc backend server and the proxy which will forward grpc-calls from localhost:8080 to the backend server at localhost:9090 and vice-versa
-3. Run the client by opening the *echotest.html* in the browser. The html-form is not working, but open up dev-tools and look to the network tab :)
+3. Run the client by opening the *echotest.html* in the browser. 
 
